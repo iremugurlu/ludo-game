@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>LUDO GAME</title>
+</head>
+
+<style>
+    a{
+            text-decoration: none;
+        }
+        p {
+            font-family: 'Frijole', cursive;
+        }
+
+        text{
+            font-family: 'Frijole', cursive;
+        }
+        body{
+            background-color: rgb(0, 203, 253);
+            color: white;
+            margin: 40px;
+        }
+
+        h3 {
+            color: black;
+            background-color: yellow;
+            border: 2px;
+            font-family: 'Frijole', cursive;
+            width: 170px;
+            font-size: 25px;
+            text-align: center;
+        }
+
+
+        table.center {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        td{
+            text-align: center;
+            vertical-align: middle;
+            font-size: 30px;
+        }
+
+        button {
+            background-color: grey;
+            color: white;
+            font-family: 'Frijole', cursive;
+            font-size: 20px;
+        }
+        button:hover {
+            background-color: greenyellow;
+            color:white;
+        }
+
+        .pawns{
+            width:20px;
+            height:20px;
+            border-radius: 15px;
+            position: absolute;
+        }
+        .diceImage {
+            width: 80px;
+            height: 80px;
+            top: 400px;
+            left: 50px;
+
+        }
+
+
+ .movementPositions *, .bluePositions *, .redPositions *, .greenPositions *, .yellowPositions * {
+ position: relative;
+  width: 20px;
+        height: 20px;
+        border-radius: 15px ;
+        position: absolute;
+        border: solid black;
+
+     background-color: white;
+ }
+
+/* if null ( coin is null ) -> popup msg
+*/
+
+    </style>
+
+<body>
+
+
+    <table class="center">
+
+            <tr>
+                <td>
+                    <div class="players">
+                        <h3>PLAYER 4</h3>
+                </td>
+                <td>
+                    <p>
+                        <span style='color:red'>L</span>
+                        <span style='color:red'>U</span>
+                        <span style='color:red'>D</span>
+                        <span style='color:red'>O</span>
+                    </p>
+                </td>
+                <td>
+                    <div class="players">
+                        <h3>PLAYER 1</h3>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td> <img class="diceImage" id="dice" src="1.jpg">
+                    <p id="playerType"></p>
+                    <button onclick="FullScreen()">Fullscreen Mode</button>
+                </td>
+                <td><img class="boardImage" width="500" alt="image of a game board" src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/5-ludo-board-game-miroslav-nemecek.jpg"></td>
+
+                <!-- red pawns -->
+                <div class="pawns" id="0_0" style="background-color: red;border: 2px solid black;top:197px;left:921px;"></div>
+                <div class="pawns" id="0_1" style="background-color: red;border: 2px solid black;top:197px;left:962px;"></div>
+                <div class="pawns" id="0_2" style="background-color: red;border: 2px solid black;top:238px;left:921px;"></div>
+                <div class="pawns" id="0_3" style="background-color: red;border: 2px solid black;top:238px;left:962px;"></div>
+                <!-- green pawns -->
+                <div class="pawns" id="1_0" style="background-color: green;border: 2px solid black;top:530px;left:921px;"></div>
+                <div class="pawns" id="1_1" style="background-color: green;border: 2px solid black;top:530px;left:962px;"></div>
+                <div class="pawns" id="1_2" style="background-color: green;border: 2px solid black;top:572px;left:921px;"></div>
+                <div class="pawns" id="1_3" style="background-color: green;border: 2px solid black;top:572px;left:962px;"></div>
+                <!-- yellow pawns -->
+                <div class="pawns" id="2_0" style="background-color: yellow;border: 2px solid black;top:530px;left:587px;"></div>
+                <div class="pawns" id="2_1" style="background-color: yellow;border: 2px solid black;top:530px;left:629px;"></div>
+                <div class="pawns" id="2_2" style="background-color: yellow;border: 2px solid black;top:572px;left:587px;"></div>
+                <div class="pawns" id="2_3" style="background-color: yellow;border: 2px solid black;top:572px;left:629px;"></div>
+                <!-- blue pawns -->
+                <div class="pawns" id="3_0" style="background-color: blue;border: 2px solid black;top:197px;left:587px;"></div>
+                <div class="pawns" id="3_1" style="background-color: blue;border: 2px solid black;top:197px;left:629px;"></div>
+                <div class="pawns" id="3_2" style="background-color: blue;border: 2px solid black;top:238px;left:587px;"></div>
+                <div class="pawns" id="3_3" style="background-color: blue;border: 2px solid black;top:238px;left:629px;"></div>
+
+                    <td>
+                        <h4 id="text1">It`s </h4>
+                        <h4 id="player">*</h4>
+                        <h4 id="text2">'s turn</h4>
+                        <button id="quitButton"> QUIT </button>
+                    </td>
+
+            </tr>
+            <tr>
+                <td><div class="players"><h3>PLAYER 3</h3></div></td>
+                <td>
+                    <p id="error" style="float:center;"></p>
+                    <div id="status">
+                        <span id="statusbar"></span>
+                    </div>
+                </td>
+                <td><div class="players"><h3>PLAYER 2</h3></div></td>
+            </tr>
+            </table>
+
+                <script>
+        function FullScreen() {
+            if ((document.fullScreenElement && document.fullScreenElement !== null) ||
+                (!document.mozFullScreen && !document.webkitIsFullScreen)) {
+                if (document.documentElement.requestFullScreen) {
+                    document.documentElement.requestFullScreen();
+                } else if (document.documentElement.mozRequestFullScreen) {
+                    document.documentElement.mozRequestFullScreen();
+                } else if (document.documentElement.webkitRequestFullScreen) {
+                    document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+                }
+            } else {
+                if (document.cancelFullScreen) {
+                    document.cancelFullScreen();
+                } else if (document.mozCancelFullScreen) {
+                    document.mozCancelFullScreen();
+                } else if (document.webkitCancelFullScreen) {
+                    document.webkitCancelFullScreen();
+                }
+            }
+        }
+        if (window.innerWidth < 4000) {
+            alert("Your screen resolution is not sufficient");
+        }
+    </script>
+
+            <script src="javascripts/config.js"></script>
+            <script src="javascripts/statuses.js"></script>
+            <script src="javascripts/messages.js"></script>
+            <script src="javascripts/ui-right.js"></script>
+            <script src="javascripts/interactions.js"></script>
+    </body>
+</html>

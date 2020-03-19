@@ -1,0 +1,230 @@
+
+header {
+    font-family: 'Handlee', cursive;
+    font-size: 100px;
+    color: #993394a1;
+   text-align: center;
+}
+
+body{
+    background-image: url("https://images6.alphacoders.com/451/451028.jpg") ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background: cover;
+    position: relative;
+    height: 100vh;
+    margin:0;
+    padding: 0;
+    
+   
+}
+.grid {
+    animation: bounceIn 2s;
+    width: 450px;
+    height: 200px;
+    border: 1px solid black;
+    background-color: #3f8a21af;
+    margin-left: 70px;
+    margin-top: 40px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 25px;
+    border: 1px solid black;
+    margin-top: 0px;
+
+}
+.NewName  {
+    animation: bounceIn 2s;
+    margin-left: 50px;
+}
+.ButtonsYes {
+    margin-left: 70px;
+}
+.NewName > input{
+    
+    width: 80%;
+    padding-left: 1.5%;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: yellow;
+    outline: none;
+}
+
+.button1 button{
+
+    background-color: rgb(0, 255, 0);
+box-shadow: none;
+border-width: 0px;
+border-radius: 4px;
+padding: 9px 20px;
+font-family: 'Handlee', cursive;
+font-size: 17px;
+margin-left: 100px;
+margin-top: 11px;
+}
+
+.theInputBox {
+    width: 200px;
+    height: 35px;
+    border-color: purple;
+    border: 2px;
+}
+.smth {
+    text-align: center;
+    margin-right: 10px;
+    font-family: 'Handlee', cursive;
+    font-size: 25px;
+}
+.button2 button {
+    background-color: rgb(255, 0, 0);
+    box-shadow: none;
+    border-width: 0px;
+    border-radius: 4px;
+    padding: 9px 20px;
+    font-family: 'Handlee', cursive;
+    font-size: 17px;
+    margin-left: 60px;
+    margin-bottom: 1000000px;
+}
+
+.InvitationLink {
+    animation: bounceIn 2s;
+    margin-left: 70px;
+}
+.theInputItself {
+    background-color: rgb(226, 133, 214);
+    border-radius: 10px;
+    border-style: solid;
+    border: 2px;
+    width: 26%;
+    height: 45px;
+    outline: none;
+    font-family: 'Handlee', cursive;
+    font-size: 20px;
+    padding-left: 10px;
+}
+.SearchButton {
+    height: 45px;
+    width: 63px;
+    background-color: rgb(30, 255, 0);
+    border-radius: 4px;
+    outline: none;
+    box-shadow: none;
+    font-family: 'Handlee', cursive;
+    font-size: 13px;
+}
+.Inviting {
+    animation: bounceIn 2s;
+    margin-left: 70px;
+}
+.Generation{
+    background-color: rgb(226, 133, 214);
+    border-radius: 10px;
+    border-style: solid;
+    border: 2px;
+    width: 26%;
+    height: 45px;
+    outline: none;
+    font-family: 'Handlee', cursive;
+    font-size: 20px;
+    padding-left: 10px;
+    
+}
+.Button202 {
+    height: 45px;
+    width: 63px;
+    background-color: rgb(30, 255, 0);
+    border-radius: 4px;
+    outline: none;
+    box-shadow: none;
+    font-family: 'Handlee', cursive;
+    font-size: 13px;
+    
+}
+.TheData {
+    animation: bounceIn 2s;
+    background-color: rgb(224, 221, 15);
+    border: 1.3px solid black;
+    top: 90px;
+    right: 150px;
+    position: absolute;
+    font-family: 'Nothing You Could Do', cursive;
+    
+    opacity: 0.6;
+    font-size: 13px;
+    text-shadow: 1px 1px rgb(137, 55, 185);
+    
+}
+.DescriptionData {
+    border: 1.3px solid black;
+    border-left: 0.1666666px solid black;
+    padding-left: 2px;
+    padding-right: 2px;
+    
+}
+
+.DescriptionData2 {
+    border: 1.3px solid black;
+    border-top: 0.1666666px solid black;
+    padding-left: 2px;
+
+}
+
+.DynamicData:hover {
+    color: transparent;
+    text-shadow: none;
+}
+.DynamicData2:hover {
+    color: transparent;
+    text-shadow: none;
+}
+.How2 {
+    animation: bounceIn 2s;
+    width: 246px;
+    height: 430px;
+    border: 2px solid black;
+    right: 40px;
+    bottom: 200px;
+    position: absolute;
+    background-color: rgb(0, 173, 241);
+    right: 150px;
+    top: 300px;
+    opacity: 0.7;
+   
+
+    
+}
+.How2Play {
+    text-align: center;
+    font-family: 'Handlee', cursive;
+    font-size: 45px;
+    color: blue;
+  
+}
+.DescriptionHowToPlay {
+ 
+}
+.How2 p {
+    font-family: 'Handlee', cursive;
+    color: red;
+    padding-left: 3px;
+    text-shadow: 10px black;
+    padding-right: 3px;
+    text-shadow: 1px 1px black;
+}
+
+@keyframes bounceIn {
+    0% {
+      transform: scale(0.1);
+      opacity: 0;
+    }
+    60% {
+      transform: scale(1.2);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
